@@ -1,14 +1,16 @@
 # inaturalist-vagrant-box
 This is a complete vagrant box which includes all dependencies for iNaturalist Web App
 
-### Clone this Repository
+### Download Vagrant Box
 ```sh
-$ git clone https://github.com/vbernabe/inaturalist-vagrant-box.git inaturalist-box
+https://www.dropbox.com/s/l8yphbwnhszlce6/inaturalist.box?dl=0
 ```
 
 ### Provision the Vagrant box
 ```sh
+$ mkdir inaturalist-box
 $ cd inaturalist-box
+$ cp path-to-downloaded-file/inaturalist.box ./
 $ vagrant box add inaturalist-base inaturalist.box
 $ vagrant init inaturalist-base
 $ vagrant up
