@@ -1,12 +1,12 @@
 # inaturalist-vagrant-box
 This is a complete vagrant box which includes all dependencies for iNaturalist Web App
 
-### Clone Repository
+### Clone this Repository
 ```sh
 $ git clone https://github.com/vbernabe/inaturalist-vagrant-box.git inaturalist-box
 ```
 
-### Provision box
+### Provision the Vagrant box
 ```sh
 $ cd inaturalist-box
 $ vagrant box add inaturalist-base inaturalist.box
@@ -25,4 +25,9 @@ $ git clone https://github.com/inaturalist/inaturalist.git
 $ cd inaturalist/inaturalist-master/
 $ rake es:start
 $ rails s -b 192.168.33.51
+```
+
+### Access iNaturalist on your browser
+```sh
+http://192.168.33.51:3000
 ```
