@@ -19,11 +19,28 @@ $ vagrant ssh
 ```sh
 $ git clone https://github.com/inaturalist/inaturalist.git
 ```
+### Configure iNaturalist
+```ssh
+$ cd inaturalist/
+$ gem install rake -v '10.5.0'
+$ bundle install
+$ rake es:start
+$ cp config/config.yml.example config/config.yml
+$ cp config/database.yml.example config/database.yml
+$ cp config/gmaps_api_key.yml.example config/gmaps_api_key.yml
+$ cp config/smtp.yml.example config/smtp.yml
+$ cp config/secrets.yml.example config/secrets.yml
+$ bin/rake db:migrate RAILS_ENV=development
+$ rails g airbrake 1234 09af09af09af09af09af09af09af09af09af09af
+$ rails generate airbrake --api-key 09af09af09af09af09af09af09af09af09af09af
+$ vi /home/vagrant/inaturalist/config/database.yml
+  Add the following
+	username: postgres
+	password: secret123
+```
 
 ### Start iNaturalist
 ```sh
-$ cd inaturalist/inaturalist-master/
-$ rake es:start
 $ rails s -b 192.168.33.51
 ```
 
